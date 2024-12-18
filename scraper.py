@@ -10,10 +10,13 @@ response = requests.get(url)
 #parse the html content
 soup = BeautifulSoup(response.content, "html.parser")
 
+text = soup.get_text()
 #extract specific data
-temperature = soup.find("div", class_="HourlyForecast--adWrapper--ZMPAH").text
-condition = soup.find("div", class_="condition").string
+#temperature = soup.find("div", class_="HourlyForecast--adWrapper--ZMPAH").text
+#condition = soup.find("div", class_="condition").string
 
-print(f"Temperature: {temperature}")
-print("Somethibgn here\n")
-print(f"Condition: {condition}")
+#print(f"Temperature: {temperature}")
+#print(f"Condition: {condition}")
+print(text)
+print('\n\n')
+print(soup.get_text())
